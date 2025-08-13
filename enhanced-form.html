@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced HTML5 Content & Form Demo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f9f9f9;
+            color: #222;
+        }
+        header, main, footer {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 1.5rem;
+        }
+        header {
+            background: #005fa3;
+            color: #fff;
+            border-radius: 0 0 8px 8px;
+        }
+        section {
+            margin-bottom: 2rem;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            padding: 1.5rem;
+        }
+        h2 {
+            color: #005fa3;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 0.75rem;
+            text-align: left;
+        }
+        th {
+            background: #eaf4fb;
+        }
+        ul, ol {
+            margin-left: 2rem;
+        }
+        figure {
+            margin: 0;
+            text-align: center;
+        }
+        figcaption {
+            font-size: 0.95em;
+            color: #555;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+        fieldset {
+            border: 1px solid #005fa3;
+            border-radius: 6px;
+            padding: 1rem;
+        }
+        legend {
+            font-weight: bold;
+            color: #005fa3;
+        }
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 0.5rem;
+            margin-bottom: 0.5rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1em;
+        }
+        input[type="checkbox"], input[type="radio"] {
+            width: auto;
+            margin-right: 0.5em;
+        }
+        .form-actions {
+            display: flex;
+            gap: 1rem;
+        }
+        button {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 4px;
+            background: #005fa3;
+            color: #fff;
+            font-size: 1em;
+            cursor: pointer;
+        }
+        button[type="reset"] {
+            background: #ccc;
+            color: #222;
+        }
+        @media (max-width: 600px) {
+            header, main, footer {
+                padding: 1rem;
+            }
+            section {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Advanced HTML5: Enhancing Content & Forms</h1>
+        <p>A demonstration of lists, tables, media, and a complete HTML5 form with native validation.</p>
+    </header>
+    <main>
+        <section aria-labelledby="lists-section">
+            <h2 id="lists-section">Lists Showcase</h2>
+            <h3>Popular Web Technologies</h3>
+            <ul>
+                <li>HTML5</li>
+                <li>CSS3</li>
+                <li>JavaScript</li>
+                <li>Python</li>
+                <li>Node.js</li>
+            </ul>
+            <h3>Steps to Build a Web Page</h3>
+            <ol>
+                <li>Plan your content and layout</li>
+                <li>Write semantic HTML structure</li>
+                <li>Style with CSS</li>
+                <li>Add interactivity with JavaScript</li>
+                <li>Test and deploy</li>
+            </ol>
+        </section>
+        <section aria-labelledby="tables-section">
+            <h2 id="tables-section">Tables Showcase</h2>
+            <table>
+                <caption>Sample Student Grades</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Subject</th>
+                        <th scope="col">Grade</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Alice</td>
+                        <td>Math</td>
+                        <td>A</td>
+                    </tr>
+                    <tr>
+                        <td>Bob</td>
+                        <td>Science</td>
+                        <td>B+</td>
+                    </tr>
+                    <tr>
+                        <td>Carol</td>
+                        <td>History</td>
+                        <td>A-</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section aria-labelledby="media-section">
+            <h2 id="media-section">Media Showcase</h2>
+            <figure>
+                <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=600&q=80" alt="Modern web development workspace" width="100%" style="max-width:400px; border-radius:8px;">
+                <figcaption>A modern workspace for web development.</figcaption>
+            </figure>
+            <audio controls>
+                <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <br>
+            <video controls width="400" poster="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80">
+                <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </section>
+        <section aria-labelledby="form-section">
+            <h2 id="form-section">Complete HTML5 Form</h2>
+            <form action="#" method="post" autocomplete="on">
+                <fieldset>
+                    <legend>Personal Information</legend>
+                    <label for="fullname">Full Name *</label>
+                    <input type="text" id="fullname" name="fullname" placeholder="e.g. Jane Doe" required minlength="3" autocomplete="name">
+
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" placeholder="e.g. jane@example.com" required autocomplete="email">
+
+                    <label for="dob">Date of Birth *</label>
+                    <input type="date" id="dob" name="dob" required>
+
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" placeholder="e.g. +254712345678" pattern="\+?[0-9]{10,15}" autocomplete="tel">
+                </fieldset>
+                <fieldset>
+                    <legend>Account Details</legend>
+                    <label for="username">Username *</label>
+                    <input type="text" id="username" name="username" required minlength="4" maxlength="16" pattern="[A-Za-z0-9_]+" placeholder="Choose a username" autocomplete="username">
+
+                    <label for="password">Password *</label>
+                    <input type="password" id="password" name="password" required minlength="8" pattern="(?=.*[A-Z])(?=.*[a-z])(?=.*\d).{8,}" placeholder="At least 8 characters, incl. uppercase, lowercase, number" autocomplete="new-password">
+
+                    <label for="confirm-password">Confirm Password *</label>
+                    <input type="password" id="confirm-password" name="confirm-password" required minlength="8" autocomplete="new-password">
+                </fieldset>
+                <fieldset>
+                    <legend>Preferences</legend>
+                    <label for="country">Country *</label>
+                    <select id="country" name="country" required>
+                        <option value="">Select your country</option>
+                        <option value="Kenya">Kenya</option>
+                        <option value="Uganda">Uganda</option>
+                        <option value="Tanzania">Tanzania</option>
+                        <option value="Other">Other</option>
+                    </select>
+
+                    <label>Gender</label>
+                    <input type="radio" id="gender-male" name="gender" value="male">
+                    <label for="gender-male" style="display:inline; font-weight:normal;">Male</label>
+                    <input type="radio" id="gender-female" name="gender" value="female">
+                    <label for="gender-female" style="display:inline; font-weight:normal;">Female</label>
+                    <input type="radio" id="gender-other" name="gender" value="other">
+                    <label for="gender-other" style="display:inline; font-weight:normal;">Other</label>
+
+                    <label for="newsletter">
+                        <input type="checkbox" id="newsletter" name="newsletter" value="yes"> Subscribe to newsletter
+                    </label>
+                </fieldset>
+                <fieldset>
+                    <legend>Additional Information</legend>
+                    <label for="bio">Short Bio</label>
+                    <textarea id="bio" name="bio" rows="4" maxlength="300" placeholder="Tell us about yourself (max 300 chars)"></textarea>
+
+                    <label for="website">Personal Website</label>
+                    <input type="url" id="website" name="website" placeholder="https://yourwebsite.com" pattern="https?://.+">
+
+                    <label for="referral">Referral Code</label>
+                    <input type="text" id="referral" name="referral" readonly value="PLP2025">
+                </fieldset>
+                <div class="form-actions">
+                    <button type="submit">Submit</button>
+                    <button type="reset">Reset</button>
+                </div>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Advanced HTML5 Demo. All rights reserved.</p>
+    </footer>
+</body>
+</html>
